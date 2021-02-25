@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "../utils/container";
 import ImageList from "../utils/imageList";
-import { ImagesWrapper } from "./styles";
+import { ImagesWrapper, Title } from "./styles";
 
 const imageList = [
   "/images/image01.png",
@@ -21,6 +21,7 @@ const imageList = [
 function Portfolio() {
   return (
     <Container id="portfolio">
+      <Title>Projetos desenvolvidos</Title>
       <ImagesWrapper>
         <ImageList images={imageList} />
       </ImagesWrapper>
