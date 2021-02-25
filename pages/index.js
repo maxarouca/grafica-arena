@@ -8,7 +8,16 @@ import Services from "../components/services";
 import FullContainer from "../components/utils/fullContainer";
 import Slider from "react-slick";
 
-const banners = ["/images/banner-agenda.jpg", "/images/banner-cartoes.jpg"];
+const banners = [
+  "/images/banner-agenda.jpg",
+  "/images/banner-cartoes.jpg",
+  "/images/banner-apostilas.jpg",
+  "/images/banner-banners.jpg",
+  "/images/banner-blocos.jpg",
+  "/images/banner-canetas.jpg",
+  "/images/banner-crachas.jpg",
+  "/images/banner-panfletos.jpg",
+];
 
 export default function Home() {
   const settings = {
@@ -17,6 +26,7 @@ export default function Home() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
     adaptiveHeight: true,
   };
   return (
