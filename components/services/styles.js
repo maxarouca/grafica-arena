@@ -35,6 +35,7 @@ export const Card = styled.div`
 
   ${down("sm")} {
     width: 90%;
+    height: auto;
   }
 
   svg {
