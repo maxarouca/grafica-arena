@@ -7,6 +7,8 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>Gráfica Arena</title>
+        <link rel="shortcut icon" href="/images/favicon-arena.png" />
+
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
@@ -15,7 +17,6 @@ function MyApp({ Component, pageProps }) {
         <link
           rel="stylesheet"
           type="text/css"
-          charset="UTF-8"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
         />
         <link
