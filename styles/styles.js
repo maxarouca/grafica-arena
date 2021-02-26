@@ -11,37 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     color: #0B0D17;
   }
-  .slick-slider {
-    position: relative;
-    width: 100%;
-    top: -100px;
-    z-index: 1;
-  }
-
-  @media (max-width: 992px) {
-    .slick-slider {
-      top: 0;
-    }
-  }
-
-  .slick-prev, .slick-next {
-    z-index: 99;
-  }
-  .slick-prev{
-    left: 20px !important;
-    &:before{
-      font-size: 40px !important;
-    }
-
-  }
-
-  .slick-next {
-    right: 35px !important;
-    &:before{
-      font-size: 40px !important;
-    }
-
-  }
+  
 `;
 
 export const theme = {

@@ -1,36 +1,63 @@
 import styled from "styled-components";
 import { up, down, between, only } from "styled-breakpoints";
 
-export const HeroContentWrapper = styled.div`
-  width: 60%;
-  height: 100vh;
-  max-height: 800px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 25px;
-  ${down("md")} {
+export const HeroWrapper = styled.div`
+  .slick-slider {
+    position: relative;
     width: 100%;
-    text-align: center;
-    align-items: center;
-  }
-`;
+    top: -100px;
+    z-index: 1;
 
-export const HeroText = styled.h1`
-  font-family: Manrope;
-  font-style: extrabold;
-  font-weight: 800;
-  font-size: 72px;
-  line-height: 98px;
-  color: ${(props) => props.theme.colors.darkgray};
-  margin-top: -80px;
-
-  ${down("md")} {
-    font-size: 44px;
-    line-height: 54px;
+    ${down("md")} {
+      top: 0;
+    }
   }
-  ${down("sm")} {
-    font-size: 34px;
-    line-height: 44px;
+
+  .slick-slide {
+    div {
+      height: 100%;
+      ${down("md")} {
+        height: 400px;
+      }
+      ${down("sm")} {
+        height: 300px;
+      }
+      ${down("xs")} {
+        height: 180px;
+      }
+
+      img {
+        object-fit: cover;
+        object-position: center;
+
+        ${down("md")} {
+          height: 400px;
+        }
+        ${down("sm")} {
+          height: 300px;
+        }
+        ${down("xs")} {
+          height: 180px;
+        }
+      }
+    }
+  }
+
+  .slick-prev,
+  .slick-next {
+    z-index: 99;
+  }
+  .slick-prev {
+    left: 20px !important;
+    &:before {
+      font-size: 40px !important;
+    }
+  }
+
+  .slick-next {
+    right: 35px !important;
+    &:before {
+      font-size: 40px !important;
+    }
   }
 `;

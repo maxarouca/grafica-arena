@@ -6,37 +6,12 @@ import Hero from "../components/hero";
 import Portfolio from "../components/portfolio";
 import Services from "../components/services";
 import FullContainer from "../components/utils/fullContainer";
-import Slider from "react-slick";
-
-const banners = [
-  "/images/banner-agenda.jpg",
-  "/images/banner-cartoes.jpg",
-  "/images/banner-apostilas.jpg",
-  "/images/banner-banners.jpg",
-  "/images/banner-blocos.jpg",
-  "/images/banner-canetas.jpg",
-  "/images/banner-crachas.jpg",
-  "/images/banner-panfletos.jpg",
-];
 
 export default function Home() {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    adaptiveHeight: true,
-  };
   return (
     <>
       <Header zIndex />
-      <Slider {...settings}>
-        {banners.map((item) => (
-          <img src={item} alt="" key={item} />
-        ))}
-      </Slider>
+      <Hero />
       <Portfolio />
       <FullContainer background="#0B0D17">
         <Services />
