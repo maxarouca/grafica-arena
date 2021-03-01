@@ -1,17 +1,58 @@
 import React from "react";
+import { API_URL } from "../../services/constants";
 import Container from "../utils/container";
+import {
+  Instagram,
+  Facebook,
+  Linkedin,
+  Twitter,
+} from "@styled-icons/boxicons-logos";
 
 import { Wrapper, Text, Logo, SocialMedia, Signature, SHeart } from "./styles";
 
-function Footer() {
+function Footer({ footer }) {
+  const renderSocialLinks = (item) => {
+    switch (item.socialNetwork) {
+      case "Instagram":
+        return (
+          <a href={item.url} target="_blank" key={item.url}>
+            <Instagram size={30} />
+          </a>
+        );
+      case "Facebook":
+        return (
+          <a href={item.url} target="_blank" key={item.url}>
+            <Facebook size={30} />
+          </a>
+        );
+      case "Linkedin":
+        return (
+          <a href={item.url} target="_blank" key={item.url}>
+            <Linkedin size={30} />
+          </a>
+        );
+      case "Twitter":
+        return (
+          <a href={item.url} target="_blank" key={item.url}>
+            <Twitter size={30} />
+          </a>
+        );
+    }
+  };
+
   return (
     <Container>
       <Wrapper>
-        <Text>@2021 - Todos os direitos reservados</Text>
+        <Text>{footer?.copyright}</Text>
         <Logo>
-          <img src="/images/logo.png" alt="Logo Arena" />
+          <img
+            src={`${API_URL}${footer?.logo?.url}`}
+            alt={`${API_URL}${footer?.logo?.name}`}
+          />
         </Logo>
-        <SocialMedia>Redes Sociais</SocialMedia>
+        <SocialMedia>
+          {footer.socialLink.map((item) => renderSocialLinks(item))}
+        </SocialMedia>
       </Wrapper>
       <Wrapper>
         <Signature>

@@ -1,6 +1,7 @@
 import React from "react";
 import { HeroWrapper } from "./styles";
 import Slider from "react-slick";
+import { API_URL } from "../../services/constants";
 
 const banners = [
   "/images/banner-agenda.jpg",
@@ -13,7 +14,7 @@ const banners = [
   "/images/banner-panfletos.jpg",
 ];
 
-function Hero() {
+function Hero({ hero }) {
   const settings = {
     dots: false,
     infinite: true,
@@ -25,8 +26,8 @@ function Hero() {
   return (
     <HeroWrapper>
       <Slider {...settings}>
-        {banners.map((item) => (
-          <img src={item} alt="" key={item} />
+        {hero?.banner?.map((item) => (
+          <img src={`${API_URL}${item.url}`} alt="" key={item} />
         ))}
       </Slider>
     </HeroWrapper>

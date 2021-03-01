@@ -42,6 +42,9 @@ export const Logo = styled.div`
     text-align: center;
     margin-bottom: 40px;
   }
+  img {
+    width: 30%;
+  }
 `;
 export const SocialMedia = styled.div`
   width: 33%;
@@ -50,6 +53,17 @@ export const SocialMedia = styled.div`
   ${down("sm")} {
     width: 100%;
     text-align: center;
+  }
+  a {
+    color: #fff;
+    svg {
+      fill: #fff;
+      transition: all 0.15s;
+
+      &:hover {
+        fill: ${(props) => props.theme.colors.blue};
+      }
+    }
   }
 `;
 

@@ -27,8 +27,8 @@ export const Container = styled.div`
   }
 
   img {
-    width: 100% !important;
-    height: auto !important;
+    width: 320px;
+    height: 220px;
     margin-bottom: 20px;
   }
 `;

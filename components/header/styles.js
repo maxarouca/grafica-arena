@@ -9,11 +9,19 @@ export const Wrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  padding: 25px;
+  margin-top: 20px;
+  padding: 0 25px;
   position: relative;
+  ${down("lg")} {
+    margin-top: auto;
+    padding: 25px;
+  }
 `;
 export const Logo = styled.img`
-  height: 100%;
+  width: 200px;
+  ${down("lg")} {
+    width: 100px;
+  }
 `;
 
 export const Nav = styled.nav`

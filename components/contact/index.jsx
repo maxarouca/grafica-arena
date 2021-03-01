@@ -4,16 +4,12 @@ import Container from "../utils/container";
 
 import { Text, Wrapper } from "./styles";
 
-function Contact() {
+function Contact({ contact }) {
   return (
     <Container id="contact">
       <Wrapper>
-        <Text>Entre em contato e faça seu orçamento agora mesmo!</Text>
-        <Button
-          color="blue"
-          href="https://api.whatsapp.com/send?phone=557134092236"
-          target="_blank"
-        >
+        <Text>{contact?.contactText}</Text>
+        <Button color="blue" href={contact?.contactUrl} target="_blank">
           Enviar mensagem
         </Button>
       </Wrapper>

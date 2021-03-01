@@ -43,11 +43,21 @@ export const Card = styled.div`
       color: ${(props) => props.theme.colors.blue};
     }
   }
+
+  div {
+    height: 50px;
+    width: 50px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 `;
 
 export const CardTitle = styled.h2`
   color: ${(props) => props.theme.colors.dark};
-  margin-top: 30px;
+  margin-top: 10px;
 `;
 
 export const CardText = styled.p`

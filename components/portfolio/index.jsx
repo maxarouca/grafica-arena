@@ -18,12 +18,13 @@ const imageList = [
   "/images/image04.png",
 ];
 
-function Portfolio() {
+function Portfolio({ portfolio }) {
+  const { title, images } = portfolio;
   return (
     <Container id="portfolio">
-      <Title>Projetos desenvolvidos</Title>
+      <Title>{title}</Title>
       <ImagesWrapper>
-        <ImageList images={imageList} />
+        <ImageList images={images} />
       </ImagesWrapper>
     </Container>
   );

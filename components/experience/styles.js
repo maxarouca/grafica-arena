@@ -51,9 +51,10 @@ export const WrapperItens = styled.div`
     justify-content: center;
   }
 
-  svg {
-    margin-right: 20px;
+  img {
+    margin-right: 10px;
     margin-top: 20px;
+    width: 70px;
   }
 
   p {

@@ -10,71 +10,29 @@ import {
   CardText,
 } from "./styles";
 import Button from "../utils/button";
-import { Print } from "@styled-icons/entypo/Print";
-import { PencilRuler } from "@styled-icons/fa-solid/PencilRuler";
-import { Scanner } from "@styled-icons/material-outlined/Scanner";
-import { BirthdayCake } from "@styled-icons/fa-solid/BirthdayCake";
-import { MegaphoneFill } from "@styled-icons/bootstrap/MegaphoneFill";
-import { NewsPaper } from "@styled-icons/zondicons/NewsPaper";
 import Container from "../utils/container";
+import { API_URL } from "../../services/constants";
 
-const services = [
-  {
-    icon: <Print size="40" />,
-    title: "Impressão e cópia",
-    text:
-      "Realizamos impressão e cópia numa grande variedade de formatos e papéis.",
-  },
-  {
-    icon: <Scanner size="40" />,
-    title: "Digitalização e envio de documentos",
-    text:
-      "Fazemos a digitalização de todo tipo de documentos, para backup ou envio.",
-  },
-  {
-    icon: <PencilRuler size="40" />,
-    title: "Arte final",
-    text:
-      "Criação de arte final para qualquer material gráfico ou digital, como cartões, panfletos, posters, etc.",
-  },
-  {
-    icon: <MegaphoneFill size="40" />,
-    title: "Materiais de Divulgação",
-    text:
-      "Produzimos diversos materiais de divulgação, desde cartões e panfletos, a banners e faixas.",
-  },
-  {
-    icon: <BirthdayCake size="40" />,
-    title: "Personalizados",
-    text:
-      "Impressão de materiais personalizados para festas e eventos, como adesivos, topos para bolo e papel arroz.",
-  },
-  {
-    icon: <NewsPaper size="40" />,
-    title: "Diversos",
-    text:
-      "Oferecemos ainda diversos outros materiais, produzidos segundo a necessidade de cada cliente.",
-  },
-];
-
-function Services() {
+function Services({ services, contact }) {
   return (
     <Container id="services">
       <Wrapper>
-        <Title>Serviços oferecidos</Title>
+        <Title>{services?.title}</Title>
         <WrapperCards>
-          {services?.map(({ title, text, icon }) => (
+          {services?.card?.map(({ title, description, icon }) => (
             <Card key={title}>
-              <div>{icon}</div>
+              <div>
+                <img src={`${API_URL}${icon.url}`} alt={icon.name} />
+              </div>
               <CardTitle>{title}</CardTitle>
-              <CardText>{text}</CardText>
+              <CardText>{description}</CardText>
             </Card>
           ))}
         </WrapperCards>
         <Button
           color="#FFF"
           transparent
-          href="https://api.whatsapp.com/send?phone=557134092236"
+          href={contact?.contactUrl}
           target="_blank"
         >
           Solicite um orçamento <RightArrowAlt size={20} fill="#FFF" />

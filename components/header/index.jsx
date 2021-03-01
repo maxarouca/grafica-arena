@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { API_URL } from "../../services/constants";
 
 import Container from "../utils/container";
 import {
@@ -11,13 +12,15 @@ import {
   MenuIconClose,
 } from "./styles";
 
-function Header() {
+function Header({ header }) {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const { link, logo } = header;
 
   return (
     <Container id="nav">
       <Wrapper>
-        <Logo src="/images/logo.png" alt="Logo Arena" />
+        <Logo src={`${API_URL}${logo.url}`} alt="Logo Arena" />
 
         <MenuIcon size="30" open={menuOpen} onClick={() => setMenuOpen(true)} />
         <MenuIconClose
@@ -27,52 +30,18 @@ function Header() {
         />
 
         <Nav open={menuOpen}>
-          <MenuLink
-            activeClass="active"
-            to=""
-            spy={true}
-            smooth={true}
-            duration={500}
-          >
-            Home
-          </MenuLink>
-          <MenuLink
-            activeClass="active"
-            to="portfolio"
-            spy={true}
-            smooth={true}
-            duration={500}
-            onClick={() => setMenuOpen(false)}
-          >
-            Portfólio
-          </MenuLink>
-          <MenuLink
-            activeClass="active"
-            to="services"
-            spy={true}
-            smooth={true}
-            duration={500}
-            onClick={() => setMenuOpen(false)}
-          >
-            Serviços
-          </MenuLink>
-          {/* <MenuLink
-                      activeClass="active"
-                      to="portfolio"
-                      spy={true}
-                      smooth={true}
-                      duration={500}
-                    >Depoimentos</MenuLink> */}
-          <MenuLink
-            activeClass="active"
-            to="contact"
-            spy={true}
-            smooth={true}
-            duration={500}
-            onClick={() => setMenuOpen(false)}
-          >
-            Contato
-          </MenuLink>
+          {link?.map((item) => (
+            <MenuLink
+              activeClass="active"
+              to={item.url}
+              spy={true}
+              smooth={true}
+              duration={500}
+              key={item.id}
+            >
+              {item.label}
+            </MenuLink>
+          ))}
           <MenuLinkButton
             color="blue"
             href="https://api.whatsapp.com/send?phone=557134092236"
