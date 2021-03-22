@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+
 import { HeroWrapper } from "./styles";
 import Slider from "react-slick";
 import { API_URL } from "../../services/constants";
@@ -26,9 +28,27 @@ function Hero({ hero }) {
   return (
     <HeroWrapper>
       <Slider {...settings}>
-        {hero?.banner?.map((item) => (
-          <img src={`${API_URL}${item.url}`} alt="" key={item} />
-        ))}
+        {hero?.banner?.map((item) => {
+          if (item[0]) {
+            return (
+              <img
+                src={`${API_URL}${item.url}`}
+                alt=""
+                key={item}
+                layout="responsive"
+                priority={true}
+              />
+            );
+          }
+          return (
+            <img
+              src={`${API_URL}${item.url}`}
+              alt=""
+              key={item}
+              layout="responsive"
+            />
+          );
+        })}
       </Slider>
     </HeroWrapper>
   );

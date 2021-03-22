@@ -29,6 +29,6 @@ export const Container = styled.div`
   img {
     width: 320px;
     height: 220px;
-    margin-bottom: 20px;
+    margin-bottom: 20px !important;
   }
 `;

@@ -1,3 +1,5 @@
+import dynamic from "next/dynamic";
+
 import Head from "next/head";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle, theme } from "../styles/styles";

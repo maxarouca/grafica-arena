@@ -20,7 +20,13 @@ function Header({ header }) {
   return (
     <Container id="nav">
       <Wrapper>
-        <Logo src={`${API_URL}${logo.url}`} alt="Logo Arena" />
+        <Logo
+          src={`${API_URL}${logo.url}`}
+          alt="Logo Arena"
+          width={200}
+          height={60}
+          priority={true}
+        />
 
         <MenuIcon size="30" open={menuOpen} onClick={() => setMenuOpen(true)} />
         <MenuIconClose

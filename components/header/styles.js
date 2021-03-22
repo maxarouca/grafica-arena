@@ -3,6 +3,7 @@ import { up, down, between, only } from "styled-breakpoints";
 import { MenuAltRight } from "@styled-icons/boxicons-regular/MenuAltRight";
 import { Close } from "@styled-icons/evaicons-solid/Close";
 import { Link } from "react-scroll";
+import Image from "next/image";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -17,7 +18,7 @@ export const Wrapper = styled.div`
     padding: 25px;
   }
 `;
-export const Logo = styled.img`
+export const Logo = styled(Image)`
   width: 200px;
   ${down("lg")} {
     width: 100px;
